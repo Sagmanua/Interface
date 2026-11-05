@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Sagmanchu | comandos con gestos
+  </title>
+  <link href="https://static.jocarsa.com/logos/white.svg" rel="shortcut icon" type="image/svg+xml"/>
+  <link href="../css/estilo.css" rel="stylesheet"/>
+  <link href="css/ejercicios.css" rel="stylesheet"/>
+ </head>
+ <body class="ju-library-page">
+  <header>
+   <div class="corporativo">
+    <img alt="" src="https://static.jocarsa.com/logos/white.svg"/>
+    <h1>
+     Sagmanchu | natural-ui
+    </h1>
+   </div>
+   <div id="herramientas">
+    <button onclick="location.href='../index.html'">← Aplicación</button>
+   </div>
+   <div id="usuario">
+    <div class="imagen"></div>
+    <div>
+     <p>Jose Vicente Carratalá</p>
+     <a href="../login.html">Cerrar sesión</a>
+    </div>
+   </div>
+  </header>
+  <main>
+   <nav class="library-nav">
+    <div class="titulo-columna">
+     Ejercicios
+    </div>
+    <div class="contenido-columna">
+     <a href="index.html">
+      <span class="ficha" style="background:hsl(150,55%,45%)">I</span>
+      <span class="etiqueta">Inicio</span>
+     </a>
+     <a href="01-gestos.html">
+      <span class="ficha" style="background:hsl(200,55%,45%)">1</span>
+      <span class="etiqueta">1 · Gestos</span>
+     </a>
+     <a class="activo" href="02-comandos-gestuales.html">
+      <span class="ficha" style="background:hsl(40,55%,45%)">2</span>
+      <span class="etiqueta">2 · Comandos con gestos</span>
+     </a>
+     <a href="03-rostro.html">
+      <span class="ficha" style="background:hsl(310,55%,45%)">3</span>
+      <span class="etiqueta">3 · Rostro</span>
+     </a>
+     <a href="04-ar.html">
+      <span class="ficha" style="background:hsl(280,55%,45%)">4</span>
+      <span class="etiqueta">4 · Realidad aumentada</span>
+     </a>
+     <a href="05-vr.html">
+      <span class="ficha" style="background:hsl(12,55%,45%)">5</span>
+      <span class="etiqueta">5 · Realidad virtual</span>
+     </a>
+     <a href="../index.html">
+      <span class="ficha" style="background:hsl(100,55%,45%)">←</span>
+      <span class="etiqueta">Volver a la aplicación</span>
+     </a>
+    </div>
+   </nav>
+   <div class="separador"></div>
+   <div class="library-stage">
+    <article class="ju-card">
+     <h2>2 · Comandos con gestos</h2>
+     <p>Un reproductor de juguete que se maneja sin tocar nada. Los gestos «discretos» hay que <em>mantenerlos</em> unos instantes para evitar disparos accidentales; el volumen es un gesto <em>continuo</em>.</p>
+     <div class="nui-botones">
+      <button class="ju-btn" id="btnCamara" type="button">Activar cámara</button>
+      <button class="ju-btn secondary" id="btnParar" type="button">Parar</button>
+     </div>
+     <div class="nui-estado" id="estado">Pulsa «Activar cámara». El navegador te pedirá permiso; el vídeo no sale de tu equipo.</div>
+     <div class="nui-cols">
+      <div class="nui-vista">
+       <video id="video" playsinline muted></video>
+       <canvas id="lienzo"></canvas>
+       <div class="nui-vacio" id="vacio">La cámara está apagada</div>
+      </div>
+      <div class="nui-panel">
+       <div class="nui-dato"><span>Gesto</span><b id="dGesto">–</b></div>
+       <div>
+        <div class="nui-dato"><span>Mantener para activar</span></div>
+        <div class="nui-barra"><i id="barProgreso"></i></div>
+       </div>
+       <div class="nui-demo">
+        <div class="tarjeta" id="tarjeta">Pista A · Amanecer</div>
+        <div class="fila"><span id="dPista">▶ sonando</span><span id="dLikes">👍 0   👎 0</span></div>
+        <div class="fila"><span>Volumen</span><span id="dVol">🔊 50%</span></div>
+        <div class="vol"><i id="barVol"></i></div>
+        <div class="registro" id="registro"></div>
+       </div>
+       <p class="nui-nota">✊ puño = pausa · 👍/👎 = me gusta · ✌ = tema · 🤟 = silencio · ☝ + subir/bajar = volumen · 🖐 deslizar = pista</p>
+      </div>
+     </div>
+    </article>
+    <article class="ju-card">
+     <h3>Ejercicios</h3>
+     <ol class="nui-ejercicios">
+     <li>Cambia <code>HOLD_MS</code> (en <code>js/comandos-gestuales.js</code>) a 300 y a 1500. ¿Qué valor prefieres y por qué? Piensa en la diferencia entre rapidez y falsos positivos.</li>
+     <li>Reasigna <code>Thumb_Down</code> a «saltar a la pista siguiente» en el objeto <code>ACCIONES</code> en lugar de «No me gusta».</li>
+     <li>Añade un swipe <em>vertical</em> con la palma abierta que cambie de lista de reproducción (inspírate en el bloque <code>Open_Palm</code> de <code>fotograma()</code>).</li>
+     <li>Reto: haz que los gestos controlen la aplicación principal. Pista: <code>new BroadcastChannel('jocarsa-gestos')</code> para enviar la acción desde aquí y escucharla en <code>index.html</code> para abrir «+ Nuevo» con 🤟 o cambiar de vista con el swipe.</li>
+     </ol>
+    </article>
+   </div>
+  </main>
+  <script src="js/comun.js"></script>
+  <script src="js/comandos-gestuales.js"></script>
+ </body>
+</html>

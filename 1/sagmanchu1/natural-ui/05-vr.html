@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Sagmanchu | realidad virtual
+  </title>
+  <link href="https://static.jocarsa.com/logos/white.svg" rel="shortcut icon" type="image/svg+xml"/>
+  <link href="../css/estilo.css" rel="stylesheet"/>
+  <link href="css/ejercicios.css" rel="stylesheet"/>
+  <script type="importmap">
+  {"imports": {"three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+               "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+  </script>
+ </head>
+ <body class="ju-library-page">
+  <header>
+   <div class="corporativo">
+    <img alt="" src="https://static.jocarsa.com/logos/white.svg"/>
+    <h1>
+     Sagmanchu | natural-ui
+    </h1>
+   </div>
+   <div id="herramientas">
+    <button onclick="location.href='../index.html'">← Aplicación</button>
+   </div>
+   <div id="usuario">
+    <div class="imagen"></div>
+    <div>
+     <p>Jose Vicente Carratalá</p>
+     <a href="../login.html">Cerrar sesión</a>
+    </div>
+   </div>
+  </header>
+  <main>
+   <nav class="library-nav">
+    <div class="titulo-columna">
+     Ejercicios
+    </div>
+    <div class="contenido-columna">
+     <a href="index.html">
+      <span class="ficha" style="background:hsl(150,55%,45%)">I</span>
+      <span class="etiqueta">Inicio</span>
+     </a>
+     <a href="01-gestos.html">
+      <span class="ficha" style="background:hsl(200,55%,45%)">1</span>
+      <span class="etiqueta">1 · Gestos</span>
+     </a>
+     <a href="02-comandos-gestuales.html">
+      <span class="ficha" style="background:hsl(40,55%,45%)">2</span>
+      <span class="etiqueta">2 · Comandos con gestos</span>
+     </a>
+     <a href="03-rostro.html">
+      <span class="ficha" style="background:hsl(310,55%,45%)">3</span>
+      <span class="etiqueta">3 · Rostro</span>
+     </a>
+     <a href="04-ar.html">
+      <span class="ficha" style="background:hsl(280,55%,45%)">4</span>
+      <span class="etiqueta">4 · Realidad aumentada</span>
+     </a>
+     <a class="activo" href="05-vr.html">
+      <span class="ficha" style="background:hsl(12,55%,45%)">5</span>
+      <span class="etiqueta">5 · Realidad virtual</span>
+     </a>
+     <a href="../index.html">
+      <span class="ficha" style="background:hsl(100,55%,45%)">←</span>
+      <span class="etiqueta">Volver a la aplicación</span>
+     </a>
+    </div>
+   </nav>
+   <div class="separador"></div>
+   <div class="library-stage">
+    <article class="ju-card">
+     <h2>5 · Realidad virtual</h2>
+     <p>Una sala 3D con seis cubos y un panel con tus clientes (<code>data/clientes.json</code>). Sin visor: arrastra para mirar. Con visor: botón <strong>ENTER VR</strong>; selecciona mirando un objeto un instante o con el gatillo del mando.</p>
+     <div class="nui-estado" id="estadoVR">Cargando escena…</div>
+     <div id="vr-escena"></div>
+     <p class="nui-nota">Para probarlo sin gafas: extensión «Immersive Web Emulator» (Chrome/Edge). En un visor autónomo (Quest) abre la dirección de tu ordenador con HTTPS o usa <code>adb reverse</code>.</p>
+    </article>
+    <article class="ju-card">
+     <h3>Ejercicios</h3>
+     <ol class="nui-ejercicios">
+     <li>Cambia <code>DWELL_MS</code> (en <code>js/vr.js</code>) a 500 y a 2500. ¿Por qué la selección con la mirada necesita un tiempo de espera? (problema del «toque de Midas»).</li>
+     <li>Añade un séptimo objeto con otra forma (esfera o cono) y que al activarse cambie de color como los cubos.</li>
+     <li>Muestra también el teléfono y la empresa del cliente seleccionado en el pie del panel (<code>pintarPanel()</code>).</li>
+     <li>Reto: usa <code>SpeechRecognition</code> para decir «siguiente cliente» dentro de la escena y mover la selección. ¿Qué ventajas tiene la voz frente a la mirada cuando llevas un visor?</li>
+     </ol>
+    </article>
+   </div>
+  </main>
+  <script src="js/comun.js"></script>
+  <script type="module" src="js/vr.js"></script>
+ </body>
+</html>

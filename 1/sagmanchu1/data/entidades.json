@@ -1,0 +1,31 @@
+[
+  {
+    "emoji": "👤",
+    "texto": "Clientes",
+    "activo": true
+  },
+  {
+    "emoji": "🏢",
+    "texto": "Empresas"
+  },
+  {
+    "emoji": "📞",
+    "texto": "Contactos"
+  },
+  {
+    "emoji": "📋",
+    "texto": "Seguimiento"
+  },
+  {
+    "texto": "Formulario"
+  },
+  {
+    "texto": "Login"
+  },
+  {
+    "texto": "Toasts"
+  },
+  {
+    "texto": "Modal / paneles"
+  }
+]

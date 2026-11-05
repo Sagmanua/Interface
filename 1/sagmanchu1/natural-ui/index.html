@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Sagmanchu | interfaces naturales
+  </title>
+  <link href="https://static.jocarsa.com/logos/white.svg" rel="shortcut icon" type="image/svg+xml"/>
+  <link href="../css/estilo.css" rel="stylesheet"/>
+  <link href="css/ejercicios.css" rel="stylesheet"/>
+ </head>
+ <body class="ju-library-page">
+  <header>
+   <div class="corporativo">
+    <img alt="" src="https://static.jocarsa.com/logos/white.svg"/>
+    <h1>
+     Sagmanchu | natural-ui
+    </h1>
+   </div>
+   <div id="herramientas">
+    <button onclick="location.href='../index.html'">← Aplicación</button>
+   </div>
+   <div id="usuario">
+    <div class="imagen"></div>
+    <div>
+     <p>Jose Vicente Carratalá</p>
+     <a href="../login.html">Cerrar sesión</a>
+    </div>
+   </div>
+  </header>
+  <main>
+   <nav class="library-nav">
+    <div class="titulo-columna">
+     Ejercicios
+    </div>
+    <div class="contenido-columna">
+     <a class="activo" href="index.html">
+      <span class="ficha" style="background:hsl(150,55%,45%)">I</span>
+      <span class="etiqueta">Inicio</span>
+     </a>
+     <a href="01-gestos.html">
+      <span class="ficha" style="background:hsl(200,55%,45%)">1</span>
+      <span class="etiqueta">1 · Gestos</span>
+     </a>
+     <a href="02-comandos-gestuales.html">
+      <span class="ficha" style="background:hsl(40,55%,45%)">2</span>
+      <span class="etiqueta">2 · Comandos con gestos</span>
+     </a>
+     <a href="03-rostro.html">
+      <span class="ficha" style="background:hsl(310,55%,45%)">3</span>
+      <span class="etiqueta">3 · Rostro</span>
+     </a>
+     <a href="04-ar.html">
+      <span class="ficha" style="background:hsl(280,55%,45%)">4</span>
+      <span class="etiqueta">4 · Realidad aumentada</span>
+     </a>
+     <a href="05-vr.html">
+      <span class="ficha" style="background:hsl(12,55%,45%)">5</span>
+      <span class="etiqueta">5 · Realidad virtual</span>
+     </a>
+     <a href="../index.html">
+      <span class="ficha" style="background:hsl(100,55%,45%)">←</span>
+      <span class="etiqueta">Volver a la aplicación</span>
+     </a>
+    </div>
+   </nav>
+   <div class="separador"></div>
+   <div class="library-stage">
+    <article class="ju-card">
+     <h2>Interfaces naturales · ejercicios</h2>
+     <p>La voz y el dictado ya viven <strong>dentro</strong> de la aplicación (botón 🎙 Assistant). Aquí están las demás formas de interactuar sin teclado ni ratón. Cada ejercicio funciona por sí solo, tiene los parámetros al principio de su archivo <code>js/</code> y una lista de retos para modificarlo.</p>
+     <div class="nui-grid">
+     <a class="nui-tile" href="01-gestos.html">
+      <div class="ico">✋</div>
+      <h3>Gestos con la mano</h3>
+      <p>Esqueleto de 21 puntos, contador de dedos y «clic» con la pinza.</p>
+      <small>MediaPipe · cámara</small>
+     </a>
+     <a class="nui-tile" href="02-comandos-gestuales.html">
+      <div class="ico">👍</div>
+      <h3>Comandos con gestos</h3>
+      <p>Puño, pulgar, victoria, swipe y volumen con el índice para controlar un reproductor.</p>
+      <small>MediaPipe · cámara</small>
+     </a>
+     <a class="nui-tile" href="03-rostro.html">
+      <div class="ico">🙂</div>
+      <h3>Rostro</h3>
+      <p>Detección, expresiones e identificación facial con un «login» de demostración.</p>
+      <small>face-api.js · cámara</small>
+     </a>
+     <a class="nui-tile" href="04-ar.html">
+      <div class="ico">🕶</div>
+      <h3>Realidad aumentada</h3>
+      <p>Accesorios sobre tu cara en la cámara y cubos sobre tu mesa con WebXR.</p>
+      <small>canvas · WebXR</small>
+     </a>
+     <a class="nui-tile" href="05-vr.html">
+      <div class="ico">🥽</div>
+      <h3>Realidad virtual</h3>
+      <p>Sala 3D con mirada-selección y un panel con la lista de clientes.</p>
+      <small>three.js · WebXR</small>
+     </a>
+     </div>
+    </article>
+    <article class="ju-card">
+     <h3>Antes de empezar</h3>
+     <ul>
+      <li>Abre esta carpeta a través del servidor (<code>python server.py</code> → <code>http://localhost:8000/natural-ui/</code>). Las cámaras solo funcionan en <code>localhost</code> o en <code>https</code>.</li>
+      <li>Usa Chrome o Edge. Los modelos se descargan de internet la primera vez (MediaPipe, face-api.js, three.js), así que hace falta conexión.</li>
+      <li>La cámara se procesa en tu navegador: no se sube nada. Las muestras faciales del ejercicio 3 se guardan solo en <code>localStorage</code> y se borran con un botón.</li>
+      <li>Para AR/VR reales: un móvil Android con Chrome (AR) y unas gafas VR o el emulador «Immersive Web Emulator» (VR). Sin ellos, los ejercicios 4 y 5 tienen modo alternativo.</li>
+     </ul>
+    </article>
+   </div>
+  </main>
+  <script src="js/comun.js"></script>
+ </body>
+</html>

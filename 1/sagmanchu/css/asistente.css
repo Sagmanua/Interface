@@ -1,0 +1,125 @@
+/* =========================================================
+   ASISTENTE DE VOZ · panel flotante (mismo lenguaje visual jocarsa-iu)
+   Nota: no se usan las etiquetas header/section/nav porque estilo.css
+   les aplica reglas globales.
+   ========================================================= */
+.ju-asistente {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 2200;
+  width: min(380px, calc(100vw - 44px));
+  height: min(480px, calc(100vh - 110px));
+  display: flex;
+  flex-direction: column;
+  background: var(--color);
+  color: var(--texto-nav);
+  border: 1px solid var(--glass-line);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .35);
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+  transform: translateY(24px) scale(.97);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform .25s ease, opacity .25s ease;
+}
+.ju-asistente.abierto {
+  transform: none;
+  opacity: 1;
+  pointer-events: auto;
+}
+.ju-as-top {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--color0);
+}
+.ju-as-top small {
+  display: block;
+  font-weight: 700;
+  letter-spacing: .12em;
+  opacity: .75;
+  margin-bottom: 2px;
+}
+.ju-as-top h2 { margin: 0; font-size: 18px; }
+.ju-as-top .ju-as-botones { display: flex; gap: 6px; }
+.ju-as-top button {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  background: var(--color2);
+  color: inherit;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background .2s;
+}
+.ju-as-top button:hover { background: var(--color4); }
+.ju-as-top button.encendido { background: #1f9d6b; }
+
+/* indicador de estado */
+.ju-asistente[data-estado="active"] .ju-as-top,
+.ju-asistente[data-estado="thinking"] .ju-as-top,
+.ju-asistente[data-estado="speaking"] .ju-as-top {
+  box-shadow: inset 0 -3px 0 #3ddc97;
+}
+.ju-asistente[data-estado="speaking"] #asMic,
+.ju-asistente[data-estado="active"] #asMic { animation: juAsPulso 1.2s infinite; }
+@keyframes juAsPulso {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(61, 220, 151, .55); }
+  50% { box-shadow: 0 0 0 7px rgba(61, 220, 151, 0); }
+}
+
+.ju-as-log {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--color3);
+}
+.ju-as-msg {
+  max-width: 88%;
+  padding: 9px 12px;
+  font-size: 13px;
+  line-height: 1.4;
+  clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 0 100%);
+}
+.ju-as-msg p { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.ju-as-msg small { display: block; margin-top: 4px; font-size: 10px; opacity: .6; text-transform: uppercase; letter-spacing: .08em; }
+.ju-as-msg.user { align-self: flex-end; background: var(--color4); color: white; }
+.ju-as-msg.bot { align-self: flex-start; background: white; color: #172033; }
+.ju-as-msg.system { align-self: center; background: transparent; color: #cdeee1; font-size: 12px; text-align: center; opacity: .85; clip-path: none; }
+
+.ju-as-form {
+  flex: none;
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  background: var(--color0);
+}
+.ju-as-form input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  padding: 10px 12px;
+  background: var(--color2);
+  color: inherit;
+  font: inherit;
+  outline: none;
+}
+.ju-as-form input::placeholder { color: rgba(236, 255, 247, .55); }
+.ju-as-form .ju-btn { padding: 9px 16px; }
+
+/* cabecera: botón del asistente */
+#btnAsistente.encendido { background: #1f9d6b; }
+
+/* los toasts suben cuando el panel está abierto */
+body.asistente-abierto .ju-toast-stack { bottom: 506px; }
+
+@media (max-width: 700px) {
+  .ju-asistente { right: 10px; bottom: 10px; width: calc(100vw - 20px); }
+}
